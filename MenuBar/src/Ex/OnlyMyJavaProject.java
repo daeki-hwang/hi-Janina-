@@ -3,8 +3,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 class Victory extends JDialog{
-	private JLabel victorytext = new JLabel("¸ğµÎ ¸ÂÃß¼Ì½À´Ï´Ù!");
-	private JButton okButton = new JButton("´İ±â");
+	private JLabel victorytext = new JLabel("ëª¨ë‘ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤!");
+	private JButton okButton = new JButton("ë‹«ê¸°");
 	public Victory(JFrame frame, String title) {
 		super(frame, title);
 		setLayout(new FlowLayout());
@@ -24,8 +24,8 @@ class Victory extends JDialog{
 
 class Defeat extends JDialog{
 	private int dialogflag = 2;
-	private JLabel defeattext = new JLabel("´Ù½Ã ÇÏ½Ã°Ú½À´Ï±î?");
-	private JButton yes = new JButton("¿¹"), no = new JButton("¾Æ´Ï¿ä");
+	private JLabel defeattext = new JLabel("ë‹¤ì‹œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+	private JButton yes = new JButton("ì˜ˆ"), no = new JButton("ì•„ë‹ˆìš”");
 	public Defeat(JFrame frame, String title) {
 		super(frame, title);
 		setLayout(new FlowLayout());
@@ -152,13 +152,13 @@ public class OnlyMyJavaProject extends JFrame{
 	JLabel test = new JLabel("O");
 	private int [][] answer = {{95,298},{127,102},{462,467},{245,126},{315,238},{360,218},{439,236}, {1000, 1000}};
 	public OnlyMyJavaProject() {
-		super("Æ²¸°±×¸² Ã£±â");
+		super("í‹€ë¦°ê·¸ë¦¼ ì°¾ê¸°");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
 		Container c = getContentPane();
 		
-		vt = new Victory(this, "½Â¸®!");
-		df = new Defeat(this, "ÆĞ¹è..");
+		vt = new Victory(this, "ìŠ¹ë¦¬!");
+		df = new Defeat(this, "íŒ¨ë°°..");
 		
 		p1.setSize(500, 500);
 		p1.setLocation(0, 0);
@@ -204,7 +204,7 @@ public class OnlyMyJavaProject extends JFrame{
 			area.setVisible(false);
 		}
 		public void paintComponent(Graphics g) {
-			ImageIcon backimg = new ImageIcon("images/¿ŞÂÊ.jpg");
+			ImageIcon backimg = new ImageIcon("images/ì™¼ìª½.jpg");
 			Image spiderman = backimg.getImage();
 			Image newspiderman = spiderman.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
 			ImageIcon reback = new ImageIcon(newspiderman);
@@ -216,7 +216,7 @@ public class OnlyMyJavaProject extends JFrame{
 			other.setVisible(false);
 		}
 		public void paintComponent(Graphics g) {
-			ImageIcon backimg = new ImageIcon("images/¿À¸¥ÂÊ.jpg");
+			ImageIcon backimg = new ImageIcon("images/ì˜¤ë¥¸ìª½.jpg");
 			Image spiderman = backimg.getImage();
 			Image newspiderman = spiderman.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
 			ImageIcon reback = new ImageIcon(newspiderman);
@@ -277,8 +277,10 @@ public class OnlyMyJavaProject extends JFrame{
 					test.setVisible(true);
 					p2.add(test, new Integer(1));
 					rest--;
-					if(rest==0)
+					if(rest==0){
 						th.finish();
+						vt.setVisible(true);
+					}
 					while(i<answer.length) {
 						answer[i][0] = answer[i+1][0];
 						answer[i][1] = answer[i+1][1];
