@@ -3,8 +3,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 class Victory extends JDialog{
-	private JLabel victorytext = new JLabel("모두 맞추셨습니다!");
-	private JButton okButton = new JButton("닫기");
+	private JLabel victorytext = new JLabel("you won!");
+	private JButton okButton = new JButton("close");
 	public Victory(JFrame frame, String title) {
 		super(frame, title);
 		setLayout(new FlowLayout());
@@ -24,8 +24,8 @@ class Victory extends JDialog{
 
 class Defeat extends JDialog{
 	private int dialogflag = 2;
-	private JLabel defeattext = new JLabel("다시 하시겠습니까?");
-	private JButton yes = new JButton("예"), no = new JButton("아니요");
+	private JLabel defeattext = new JLabel("play again?");
+	private JButton yes = new JButton("yes"), no = new JButton("no");
 	public Defeat(JFrame frame, String title) {
 		super(frame, title);
 		setLayout(new FlowLayout());
@@ -152,13 +152,13 @@ public class OnlyMyJavaProject extends JFrame{
 	JLabel test = new JLabel("O");
 	private int [][] answer = {{95,298},{127,102},{462,467},{245,126},{315,238},{360,218},{439,236}, {1000, 1000}};
 	public OnlyMyJavaProject() {
-		super("틀린그림 찾기");
+		super("find the differences");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
 		Container c = getContentPane();
 		
-		vt = new Victory(this, "승리!");
-		df = new Defeat(this, "패배..");
+		vt = new Victory(this, "Victory");
+		df = new Defeat(this, "Defeat...");
 		
 		p1.setSize(500, 500);
 		p1.setLocation(0, 0);
@@ -204,7 +204,7 @@ public class OnlyMyJavaProject extends JFrame{
 			area.setVisible(false);
 		}
 		public void paintComponent(Graphics g) {
-			ImageIcon backimg = new ImageIcon("images/왼쪽.jpg");
+			ImageIcon backimg = new ImageIcon("images/left.jpg");
 			Image spiderman = backimg.getImage();
 			Image newspiderman = spiderman.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
 			ImageIcon reback = new ImageIcon(newspiderman);
@@ -216,7 +216,7 @@ public class OnlyMyJavaProject extends JFrame{
 			other.setVisible(false);
 		}
 		public void paintComponent(Graphics g) {
-			ImageIcon backimg = new ImageIcon("images/오른쪽.jpg");
+			ImageIcon backimg = new ImageIcon("images/right.jpg");
 			Image spiderman = backimg.getImage();
 			Image newspiderman = spiderman.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
 			ImageIcon reback = new ImageIcon(newspiderman);
